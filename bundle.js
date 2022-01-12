@@ -316,19 +316,16 @@ var app = (function () {
     function create_each_block_1(ctx) {
     	let li;
     	let div0;
+    	let t0_value = (/*i*/ ctx[23] === 0 ? '基音' : `第${/*i*/ ctx[23]}倍音`) + "";
     	let t0;
-    	let span0;
-    	let t1_value = /*i*/ ctx[23] + 1 + "";
     	let t1;
-    	let t2;
-    	let t3;
     	let div1;
     	let input;
+    	let t2;
+    	let span;
+    	let t3_value = /*volume*/ ctx[21] + "";
+    	let t3;
     	let t4;
-    	let span1;
-    	let t5_value = /*volume*/ ctx[21] + "";
-    	let t5;
-    	let t6;
     	let mounted;
     	let dispose;
 
@@ -340,25 +337,21 @@ var app = (function () {
     		c() {
     			li = element("li");
     			div0 = element("div");
-    			t0 = text("第");
-    			span0 = element("span");
-    			t1 = text(t1_value);
-    			t2 = text("倍音");
-    			t3 = space();
+    			t0 = text(t0_value);
+    			t1 = space();
     			div1 = element("div");
     			input = element("input");
+    			t2 = space();
+    			span = element("span");
+    			t3 = text(t3_value);
     			t4 = space();
-    			span1 = element("span");
-    			t5 = text(t5_value);
-    			t6 = space();
-    			attr(span0, "class", "px-1 font-bold");
     			attr(div0, "class", "w-4/12 pr-3 text-gray-700 text-sm text-right border-box");
     			attr(input, "class", "w-48");
     			attr(input, "type", "range");
     			attr(input, "min", "0");
     			attr(input, "max", "1");
     			attr(input, "step", "0.01");
-    			attr(span1, "class", "inline-block ml-1");
+    			attr(span, "class", "inline-block ml-1");
     			attr(div1, "class", "w-8/12 text-left");
     			attr(li, "class", "flex my-1");
     		},
@@ -366,17 +359,14 @@ var app = (function () {
     			insert(target, li, anchor);
     			append(li, div0);
     			append(div0, t0);
-    			append(div0, span0);
-    			append(span0, t1);
-    			append(div0, t2);
-    			append(li, t3);
+    			append(li, t1);
     			append(li, div1);
     			append(div1, input);
     			set_input_value(input, /*volume*/ ctx[21]);
-    			append(div1, t4);
-    			append(div1, span1);
-    			append(span1, t5);
-    			append(li, t6);
+    			append(div1, t2);
+    			append(div1, span);
+    			append(span, t3);
+    			append(li, t4);
 
     			if (!mounted) {
     				dispose = [
@@ -395,7 +385,7 @@ var app = (function () {
     				set_input_value(input, /*volume*/ ctx[21]);
     			}
 
-    			if (dirty & /*volumes*/ 1 && t5_value !== (t5_value = /*volume*/ ctx[21] + "")) set_data(t5, t5_value);
+    			if (dirty & /*volumes*/ 1 && t3_value !== (t3_value = /*volume*/ ctx[21] + "")) set_data(t3, t3_value);
     		},
     		d(detaching) {
     			if (detaching) detach(li);
@@ -405,7 +395,7 @@ var app = (function () {
     	};
     }
 
-    // (136:6) {#each SAMPLES as sample}
+    // (138:6) {#each SAMPLES as sample}
     function create_each_block(ctx) {
     	let button;
     	let t0_value = /*sample*/ ctx[18].label + "";
