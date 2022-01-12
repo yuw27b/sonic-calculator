@@ -117,7 +117,9 @@ const applyPreset = (value) => {
   <ul class="list-none mt-10 mb-3">
     {#each volumes as volume, i}
       <li class="flex my-1">
-        <div class="w-4/12 pr-3 text-gray-700 text-sm text-right border-box">第<span class="px-1 font-bold">{i + 1}</span>倍音</div>
+        <div class="w-4/12 pr-3 text-gray-700 text-sm text-right border-box">
+          {i === 0 ? '基音' : `第${i + 1}倍音`}
+        </div>
         <div class="w-8/12 text-left">
           <input class="w-48" type="range" min="0" max="1" step="0.01" bind:value={volume} on:change={generateWave} />
           <span class="inline-block ml-1">{volume}</span>
