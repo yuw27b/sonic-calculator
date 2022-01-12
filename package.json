@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "run-p dev:*",
+    "start": "mkdir -p ./dist & run-p dev:*",
     "dev:html": "cp ./src/index.html ./dist/index.html",
     "dev:js": "rollup -c -w",
     "dev:css": "NODE_ENV=development TAILWIND_MODE=watch postcss ./src/style.css -o ./dist/style.css -w",
-    "build": "run-p build:*",
+    "build": "mkdir -p ./dist & run-p build:*",
     "build:html": "cp ./src/index.html ./dist/index.html",
     "build:js": "rollup -c",
     "build:css": "NODE_ENV=production postcss ./src/style.css -o ./dist/style.css"
