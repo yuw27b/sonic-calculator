@@ -316,7 +316,7 @@ var app = (function () {
     function create_each_block_1(ctx) {
     	let li;
     	let div0;
-    	let t0_value = (/*i*/ ctx[23] === 0 ? '基音' : `第${/*i*/ ctx[23]}倍音`) + "";
+    	let t0_value = (/*i*/ ctx[23] === 0 ? '基音' : `第${/*i*/ ctx[23] + 1}倍音`) + "";
     	let t0;
     	let t1;
     	let div1;
